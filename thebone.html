@@ -94,6 +94,7 @@
     $(document).ready(function(){
       $('.tit').click(function(){
         $('.tit').removeClass('active').siblings('.txt').stop().slideUp().siblings('img').removeClass('current');
+        
         if($(this).hasClass('active')){
           $('.tit').removeClass('active').siblings('.txt').stop().slideUp().siblings('img').removeClass('current');
         } else{
