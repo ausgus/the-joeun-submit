@@ -92,6 +92,7 @@
   <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
   <script>
     $(document).ready(function(){
+      $('.tit').removeClass('active').siblings('.txt').stop().slideUp().siblings('img').removeClass('current');
       $('.tit').click(function(){
         $('.tit').removeClass('active').siblings('.txt').stop().slideUp().siblings('img').removeClass('current');
         
