@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>responsible예제</title>
+
+  <style>
+    *{margin: 0; padding: 0;}
+    ul{list-style: none;}
+    a{text-decoration: none; color: inherit;}
+    body{background-color: #e7e7e7;}
+
+
+    header{
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #959595;
+    }
+
+    .header-inner{
+      width: 1000px; height: 100px; line-height: 100px;
+      margin: 0 auto;
+      
+      display: flex;
+      justify-content: space-between;
+
+      font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .gnb{
+      width: 30%;
+      font-size: clamp(0.7rem, 2vw, 1.2rem);
+
+      display: flex;
+      justify-content: space-between;
+      color: #444;
+    }
+
+
+    .container{
+      width: 80%;
+      margin: 3% auto;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: 
+      "top"
+      "mid"
+      "bot";
+
+      gap: 100px;
+    }
+
+
+
+    /* --------top------------ */
+    .top{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .top .left{
+      padding: 30%;
+    }
+
+    .top .left h2{font-size: clamp(1rem, 4vw, 2rem);}
+
+    .top .left p{
+      font-size: clamp(0.6rem, 2.3vw, 1.2rem);
+      color: #777;
+      font-weight: 300;
+      margin: 10% 0;
+    }
+
+    .top .left .btn{
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 10px;
+      background-color: #fff;
+      text-align: center;
+    }
+    
+
+    .top .right img{
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    /* -----------------topEnd---------- */
+
+    /* -----------mid / bot------------- */
+
+    .mid > ul,
+    .bot > ul{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 10px;
+    }
+
+    .bot > ul{
+      background-color: beige;
+      padding: 0 10px 20px;
+    }
+
+    .mid > ul > li,
+    .bot > ul > li{
+      position: relative;
+    }
+    
+    .mid > ul img,
+    .bot > ul img{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .mid > ul > li:nth-child(1):after{
+      content: '스페셜티 원두';
+      display: block;
+      width: 100%;
+      line-height: 5em; text-align: center;
+      background-color: #ffffff80;
+      position: absolute;
+      top: 50%; left: 0;
+      transform: translateY(-50%);
+    }
+
+    .mid > ul > li:nth-child(2):after{
+      content: '빵집 베이커리';
+      display: block;
+      width: 100%;
+      line-height: 5em; text-align: center;
+      background-color: #ffffff80;
+      position: absolute;
+      top: 50%; left: 0;
+      transform: translateY(-50%);
+    }
+
+    .mid > ul > li:nth-child(3):after{
+      content: '편안한 공간';
+      display: block;
+      width: 100%;
+      line-height: 5em; text-align: center;
+      background-color: #ffffff80;
+      position: absolute;
+      top: 50%; left: 0;
+      transform: translateY(-50%);
+    }
+
+    .bot > ul > li:nth-child(1):after{
+      content: '아메리카노';
+      display: block;
+      width: 40%; border-radius: 50px 50px 0 0;
+      padding: 20px 0 10px; text-align: center;
+      background-color: #f0f0f0;
+      position: absolute;
+      left: 50%; bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    .bot > ul > li:nth-child(2):after{
+      content: '카페라떼';
+      display: block;
+      width: 40%; border-radius: 50px 50px 0 0;
+      padding: 20px 0 10px; text-align: center;
+      background-color: #f0f0f0;
+      position: absolute;
+      left: 50%; bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    .bot > ul > li:nth-child(3):after{
+      content: '스무디';
+      display: block;
+      width: 40%; border-radius: 50px 50px 0 0;
+      padding: 20px 0 10px; text-align: center;
+      background-color: #f0f0f0;
+      position: absolute;
+      left: 50%; bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    /* -----------mid / bot End------------- */
+
+
+
+
+    /* ---------------태블릿화면---------------- */
+
+
+    @media (max-width:786px){
+      .header-inner{
+        width: 100%; height: 350px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+
+      .gnb{
+        flex-direction: column;
+        width: 100%; line-height: 80px;
+        border-top: 1px solid #000;
+      }
+
+      .gnb > li{
+        border-bottom: 1px solid #000;
+      }
+      .top,
+      .mid > ul,
+      .bot > ul{
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+      }
+
+
+      .top .btn{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+
+    @media (max-width:390px){
+
+    }
+
+
+  </style>
+
+
+
+
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1 class="logo">BREW & CO</h1>
+      <ul class="gnb">
+        <li><a href="#">MENU</a></li>
+        <li><a href="#">INTRO</a></li>
+        <li><a href="#">QNA</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+
+  <main>
+    <div class="container">
+      <ul class="top">
+        <li class="left">
+          <h2>커피 한 잔하던가</h2>
+          <p>
+            바쁜도시의 흐름속에서 <br>
+            일상이 잠시 휴가처럼 느껴질걸<br>
+            도심 속 작음 쉼표일 수 없어.
+          </p>
+          
+          <div class="btn"><a href="#">메뉴보기</a></div>
+        </li>
+        <li class="right"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coffee1"></li>
+      </ul>
+
+      <div class="mid">
+        <h3>왜 우리야?</h3>
+        <ul>
+          <li>
+            <img src="https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="커피">
+          </li>
+
+          <li>
+            <img src="https://plus.unsplash.com/premium_photo-1675788939058-850af470cd36?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="빵">
+          </li>
+          
+          <li>
+            <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="공간">
+          </li>
+        </ul>
+      </div>
+
+      <div class="bot">
+        <h3>인기 메뉴</h3>
+        <ul>
+          <li><a href="#"><img src="https://images.unsplash.com/photo-1680327281640-66526a1db4e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFtZXJpY2FubyUyMGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" alt="아메리카노"></a></li>
+          <li><a href="#"><img src="https://plus.unsplash.com/premium_photo-1671379526961-1aebb82b317b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" alt="라떼"></a></li>
+          <li><a href="#"><img src="https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21vb3RoaWV8ZW58MHx8MHx8fDA%3D" alt="스무디"></a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+
+
+  <footer>
+
+  </footer>
+</body>
+</html>
